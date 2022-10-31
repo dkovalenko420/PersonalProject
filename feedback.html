@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Music</title>
+    <style>
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        @font-face {
+            font-family: myFirstFont;
+            src: url("fonts/horizon.otf");
+        }
+
+        @font-face {
+            font-family: mySecondFont;
+            src: url("fonts/horizon_outlined.otf");
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: black;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a,
+        .dropbtn {
+            display: inline-block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-family: MyFirstFont;
+        }
+
+        li a:hover,
+        .dropdown:hover .dropbtn {
+            background-color: #ff8a76;
+        }
+
+        a {
+            text-align: center;
+            color: black;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-family: MyFirstFont;
+
+        }
+
+        .group{
+            color: black;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-family: MyFirstFont;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="sitemap.html">Sitemap</a></li>
+        <li><a href="feedback.html">Feedback</a></li>
+    </ul>
+    <br>
+    <div class="form">
+        <form action="https://oim-apis.herokuapp.com/form" method="post">
+            <div class="group">
+                <fieldset>
+                    <legend>Your Information:</legend>
+                    <table>
+                        <tr>
+                            <td width="100px"><label>Name: </label></td>
+                            <td><input type="text" name="Name" placeholder="Enter your name here"></td>
+                        </tr>
+                        <tr>
+                            <td width="100px"><label>Email: </label></td>
+                            <td><input type="text" name="Email" placeholder="Enter your email here"></td>
+                        </tr>
+                    </table>
+                </fieldset>
+                <br>
+                <fieldset>
+                    <legend>Your Review:</legend>
+                    <div class="item">
+                        <label>What do you think of the website?</label>
+                        <br>
+                        <input type="radio" name="Great">Great
+                        <input type="radio" name="Awesome">Awesome
+                        <input type="radio" name="Good">Good
+                    </div>
+                    <div class="item">
+                        <label>Comments:</label><br>
+                        <textarea name="Comments" id="comments" cols="60" rows="6"></textarea>
+                    </div>
+                    <div class="item">
+                        <input type="checkbox" checked name="Signed Up"> Sign me up for email updates
+                    </div>
+                    <div class="item">
+                        <input type="submit" name="Submit" value="Submit">
+                        <input type="reset" name="Reset" value="Reset">
+                    </div>
+                </fieldset>
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>
