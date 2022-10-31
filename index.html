@@ -1,35 +1,124 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebTech Project Proposal</title>
-    <style>
-        p {
-            text-align: center;
-        }
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Music</title>
+  <style>
+    ::-webkit-scrollbar {
+      display: none;
+    }
 
-        h1 {
-            text-align: center;
-        }
-    </style>
+    @font-face {
+      font-family: myFirstFont;
+      src: url("fonts/horizon.otf");
+    }
+
+    @font-face {
+      font-family: mySecondFont;
+      src: url("fonts/horizon_outlined.otf");
+    }
+
+    video {
+      width: 100%;
+    }
+
+    .container {
+      position: relative;
+      text-align: center;
+      color: white;
+    }
+
+    .bottom-left {
+      position: absolute;
+      bottom: 4px;
+      left: 0px;
+    }
+
+    .top-left {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+    }
+
+    .top-right {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+    }
+
+    .bottom-right {
+      position: absolute;
+      bottom: 4px;
+      right: 0px;
+    }
+
+    .centered {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    button {
+      background-color: #ff8a76;
+      color: white;
+      border: none;
+      font-family: myFirstFont;
+      padding: 50px 20px;
+      font-size: 20px;
+      letter-spacing: 2px;
+      cursor: pointer;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: black;
+    }
+
+    li {
+      float: left;
+    }
+
+    li a,
+    .dropbtn {
+      display: inline-block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-family: MyFirstFont;
+    }
+
+    li a:hover,
+    .dropdown:hover .dropbtn {
+      background-color: #ff8a76;
+    }
+  </style>
 </head>
 
 <body>
-    <h1>WebTech Project Proposal</h1>
-    <hr>
-    <p>I would like to create a website for my musical project “dracodraco”. Its objective would be to funnel the
-        visitors to the various social media, streaming and merchandise links that are related to the project. The
-        target audience would be the existing fans of my project. If I look at my Spotify statistics, the fans comprise
-        of mostly men (76%) between the ages of 18-27 (69%). I would like it to be a visually unique website with a main
-        front page that looks similar to <a href="https://sheltervr.club">this.</a> The front page would then lead the
-        visitors into the various sub-pages, such as shows, merchandise, streaming, and social media. The whole project
-        would involve around 5-6 pages, not including the homepage, site map and contact pages. The whole appeal of the
-        website revolves around the unorthodox, yet intuitive look of the website. As I have been doing graphics design
-        for more than 8 years, I am very confident in my abilities to reproduce something of similar look and quality.
-    </p>
+
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="sitemap.html">Sitemap</a></li>
+    <li><a href="feedback.html">Feedback</a></li>
+  </ul>
+
+  <div class="container">
+    <video autoplay muted loop id="myVideo">
+      <source src="video/bg-video.mp4" type="video/mp4">
+    </video>
+    <div class="bottom-left"><a href="music.html"><button>MUSIC <br>VIDEOS</button></a></div>
+    <div class="top-left"><a href="video.html"><button>RELEA<br>SES</button></a></div>
+    <div class="top-right"><a href="tour.html"><button>TOUR <br>DATES</button></a></div>
+    <div class="bottom-right"><a href="visuals.html"><button>DRACO<br> VISUALS</button></a></div>
+    <div class="centered"><img src="images/top-img.png"></div>
+  </div>
+
 </body>
 
 </html>
