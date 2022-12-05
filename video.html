@@ -141,18 +141,18 @@
 
     <script>
         let allImages = document.querySelectorAll("img");
-        allImages.forEach((img)=>{
-            img.addEventListener("mouseover",()=>{
-                img.setAttribute("style","transform:scale(1.1)");
+        allImages.forEach((img) => {
+            img.addEventListener("mouseover", () => {
+                img.setAttribute("style", "transform:scale(1.1)");
             })
-            img.addEventListener("mouseout",()=>{
+            img.addEventListener("mouseout", () => {
                 img.removeAttribute("style");
             })
         })
         let show_btn = document.querySelector(".show_btn");
         let artist_img = document.querySelector(".artist_img");
-        show_btn.addEventListener("click",()=>{
-            artist_img.setAttribute("style","display: block");
+        show_btn.addEventListener("click", () => {
+            artist_img.setAttribute("style", "display: block");
             artist_img.scrollIntoView({
                 behavior: "smooth"
             })
