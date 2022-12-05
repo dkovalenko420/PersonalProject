@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="DracoDraco Musical Project Visuals">
     <meta name="keywords" content="DracoDraco, Music, Visuals, Eye, Dragon, Human, Planet">
-    <meta name="author" content="DK">
+    <meta name="author" content="Danyil Kovalenko">
     <title>Music</title>
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
@@ -68,6 +68,8 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
+            max-width: 90%;
+            transition: all 0.5s linear;
         }
 
         body {
@@ -95,6 +97,18 @@
     <img class="visual" src="images/me.jpg" alt="Anime Character"
         title="Anime Character Representing DracoDraco On A Black Background">
 
+
+    <script>
+        let allVisualImages = document.querySelectorAll(".visual");
+        allVisualImages.forEach((img) => {
+            img.addEventListener("mouseover", () => {
+                img.setAttribute("style", "transform:rotate(180deg)")
+            })
+            img.addEventListener("mouseout", () => {
+                img.setAttribute("style", "transform:rotate(0deg)")
+            })
+        })
+    </script>
 </body>
 
 </html>
