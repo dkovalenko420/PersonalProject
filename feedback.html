@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="DracoDraco Musical Project Feedback Form">
     <meta name="keywords" content="DracoDraco, Feedback, Music, Name, Email">
-    <meta name="author" content="DK">
+    <meta name="author" content="Danyil Kovalenko">
     <title>Music</title>
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
@@ -68,6 +68,15 @@
             text-decoration: none;
             font-family: MyFirstFont;
         }
+
+        #comments {
+            width: 100%;
+            min-height: 10rem;
+        }
+
+        .error {
+            color: red;
+        }
     </style>
 </head>
 
@@ -87,11 +96,11 @@
                     <table>
                         <tr>
                             <td width="100px"><label>Name: </label></td>
-                            <td><input type="text" name="Name" placeholder="Enter your name here"></td>
+                            <td><input id="name" type="text" name="Name" placeholder="Enter your name here"></td>
                         </tr>
                         <tr>
                             <td width="100px"><label>Email: </label></td>
-                            <td><input type="text" name="Email" placeholder="Enter your email here"></td>
+                            <td><input id="email" type="text" name="Email" placeholder="Enter your email here"></td>
                         </tr>
                     </table>
                 </fieldset>
@@ -107,10 +116,13 @@
                     </div>
                     <div class="item">
                         <label>Comments:</label><br>
-                        <textarea name="Comments" id="comments" cols="60" rows="6"></textarea>
+                        <textarea name="Comments" id="comments"></textarea>
                     </div>
                     <div class="item">
                         <input type="checkbox" checked name="Signed Up"> Sign me up for email updates
+                    </div>
+                    <div class="item">
+                        <p class="error"></p>
                     </div>
                     <div class="item">
                         <input type="submit" name="Submit" value="Submit">
@@ -121,6 +133,41 @@
         </form>
     </div>
 
+    <script>
+        let form = document.querySelector("form");
+        let resetBtn = document.querySelector('input[name="Reset"]');
+        let errorEl = document.querySelector(".error");
+        let nameInput = document.querySelector("#name");
+        let emailInput = document.querySelector("#email");
+        let emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+            errorEl.innerHTML = "";
+            let noErrors = true;
+            if (nameInput.value.trim() == "") {
+                errorEl.innerHTML += 'Name can not be left empty. <br>'
+                noErrors = false;
+            }
+
+            if (emailInput.value.trim() == "") {
+                errorEl.innerHTML += 'Email can not be left empty. <br>'
+                noErrors = false;
+            }
+            else if (emailInput.value.trim() != "") {
+                if (!emailInput.value.match(emailFormat)) {
+                    errorEl.innerHTML += 'You have entered an invalid email address! <br>'
+                    noErrors = false;
+                }
+
+            }
+            if (noErrors){
+                form.submit();
+            }
+        })
+        resetBtn.addEventListener("click",()=>{
+            errorEl.innerHTML = "";
+        })
+    </script>
 </body>
 
 </html>
