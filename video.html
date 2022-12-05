@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="DracoDraco Musical Project Releases">
     <meta name="keywords" content="DracoDraco, Music, Spotify, Releases, Through The Light, Flow, Sirius, Serpent Eyez">
-    <meta name="author" content="DK">
+    <meta name="author" content="Danyil Kovalenko">
     <title>Music</title>
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
@@ -68,12 +68,34 @@
             display: block;
             margin-left: auto;
             margin-right: auto;
-            border: 1px solid lightblue
+            border: 1px solid lightblue;
+            max-width: 90%;
+            transition: all 0.3s ease-in-out;
+            margin-bottom: 1rem;
         }
 
         body {
             background-color: black;
             text-align: center;
+        }
+
+        .show_btn {
+            padding: 1rem 3rem;
+            border-radius: 0.5rem;
+            color: #000;
+            background-color: lightblue;
+            font-size: 1.2rem;
+            font-weight: bold;
+            cursor: pointer;
+            font-family: MyFirstFont;
+            max-width: 30%;
+            margin: 2rem auto;
+        }
+
+        .artist_img {
+            margin: 2rem auto;
+            max-width: 90%;
+            transition: all 0.3s ease-in-out;
         }
     </style>
 </head>
@@ -110,6 +132,32 @@
                 src="images/sirius.png" alt="Sirius" title="Cover of the Sirius Single"></a>
         <a href="https://open.spotify.com/track/5qmeTiJWlroEI3Wffe5JXK?si=794db8859ea84197">"Sirius"</a>
     </div>
+
+    <div class="show_btn">
+        Click Here to See Artist
+    </div>
+
+    <img src="./images/artists/first.jpeg" class="artist_img" style="display: none;">
+
+    <script>
+        let allImages = document.querySelectorAll("img");
+        allImages.forEach((img)=>{
+            img.addEventListener("mouseover",()=>{
+                img.setAttribute("style","transform:scale(1.1)");
+            })
+            img.addEventListener("mouseout",()=>{
+                img.removeAttribute("style");
+            })
+        })
+        let show_btn = document.querySelector(".show_btn");
+        let artist_img = document.querySelector(".artist_img");
+        show_btn.addEventListener("click",()=>{
+            artist_img.setAttribute("style","display: block");
+            artist_img.scrollIntoView({
+                behavior: "smooth"
+            })
+        })
+    </script>
 </body>
 
 </html>
