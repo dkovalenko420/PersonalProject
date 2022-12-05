@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="DracoDraco Musical Project Home Page">
   <meta name="keywords" content="DracoDraco, Home, Music, Spotify, Project">
-  <meta name="author" content="DK">
+  <meta name="author" content="Danyil Kovalenko">
   <title>Music</title>
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
@@ -65,6 +65,7 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      width: 100%;
     }
 
     button {
@@ -76,6 +77,9 @@
       font-size: 20px;
       letter-spacing: 2px;
       cursor: pointer;
+      position: relative;
+      z-index: 10;
+      transition: all 0.3s ease-in-out;
     }
 
     ul {
@@ -104,6 +108,37 @@
     .dropdown:hover .dropbtn {
       background-color: #ff8a76;
     }
+
+    .main_img {
+      max-width: 100%;
+    }
+
+    @media only screen and (max-width:1100px) {
+      .centered {
+        width: 70%;
+      }
+    }
+
+    @media only screen and (max-width:768px) {
+      .container {
+        min-height: 80vh;
+        background-color: #000000;
+      }
+
+      video {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      button {
+        padding: 35px 10px;
+        font-size: 16px;
+        letter-spacing: 1px;
+      }
+    }
   </style>
 </head>
 
@@ -123,8 +158,21 @@
     <div class="top-left"><a href="video.html"><button>RELEA<br>SES</button></a></div>
     <div class="top-right"><a href="tour.html"><button>TOUR <br>DATES</button></a></div>
     <div class="bottom-right"><a href="visuals.html"><button>DRACO<br> VISUALS</button></a></div>
-    <div class="centered"><img src="images/top-img.png" alt="Logo" title="Metallic Logo of DracoDraco"></div>
+    <div class="centered"><img class="main_img" src="images/top-img.png" alt="Logo" title="Metallic Logo of DracoDraco">
+    </div>
   </div>
+
+  <script>
+    let allButtons = document.querySelectorAll("button");
+    allButtons.forEach((btn) => {
+      btn.addEventListener("mouseover", () => {
+        btn.setAttribute("style", "background-color: red");
+      })
+      btn.addEventListener("mouseout", () => {
+        btn.removeAttribute("style");
+      })
+    })
+  </script>
 
 </body>
 
